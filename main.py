@@ -105,7 +105,7 @@ if __name__ == '__main__':
 
     # Теперь time_series_data_plant2_cont_range и pid_params_data_plant2_cont_range можно использовать
     # для обучения нейросети, используя ПИД диапазоны, адаптированные для непрерывной симуляции.
-
+    import json
     data_file = 'data.jsonl'
     with open(data_file, 'w') as f:
         for pid, time_series in zip(pid_params_data_plant2_cont_range, time_series_data_plant2_cont_range):
