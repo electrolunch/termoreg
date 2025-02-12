@@ -143,15 +143,12 @@ plt.show()
 # Rewriting the selection according to the provided instructions
 
 # Извлечение входных данных и меток из test_data
-X_test = np.array([entry['time_series'] for entry in test_data])
-y_test = np.array([[entry['kp'], entry['ki'], entry['kd']] for entry in test_data])
-
+# Использование уже существующих датасетов
 # Предсказание с использованием моделей
-predictions_lstm = lstm_model.predict(X_test)
-predictions_cnn = cnn_model.predict(X_test)
+predictions_lstm = lstm_model.predict(X_test_lstm)
+predictions_cnn = cnn_model.predict(X_test_cnn)
 
 for sample_index in range(1, 5):
-    x_sample = X_test[sample_index]
     y_true = y_test[sample_index]
     
     # Сделать предсказания
